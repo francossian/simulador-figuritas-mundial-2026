@@ -75,73 +75,69 @@ export default function Dashboard({
       </div>
 
       <div className="dash-main">
-        <div className="dash-left">
-          <div className="progress-section">
-            <div className="progress-ring-wrap">
-              <ProgressRing percent={percentComplete} />
+        <div className="progress-section">
+          <div className="progress-ring-wrap">
+            <ProgressRing percent={percentComplete} />
+          </div>
+          <div className="progress-info">
+            <div className="progress-label">Progreso del álbum</div>
+            <div className="progress-bar-track">
+              <div
+                className="progress-bar-fill"
+                style={{ width: `${percentComplete}%` }}
+              />
             </div>
-            <div className="progress-info">
-              <div className="progress-label">Progreso del álbum</div>
-              <div className="progress-bar-track">
-                <div
-                  className="progress-bar-fill"
-                  style={{ width: `${percentComplete}%` }}
-                />
-              </div>
-              <div className="progress-milestones">
-                {milestones.map(m => (
-                  <span
-                    key={m}
-                    className={`milestone ${percentComplete >= m ? 'reached' : ''}`}
-                  >
-                    {m}%
-                  </span>
-                ))}
-              </div>
+            <div className="progress-milestones">
+              {milestones.map(m => (
+                <span
+                  key={m}
+                  className={`milestone ${percentComplete >= m ? 'reached' : ''}`}
+                >
+                  {m}%
+                </span>
+              ))}
             </div>
           </div>
-
-          <HistoryChart points={chartPoints} />
         </div>
 
-        <div className="dash-right">
-          <div className="actions-section">
+        <div className="actions-section">
+          <button
+            className="btn-primary"
+            onClick={() => onBuyPacks(1)}
+            disabled={isComplete}
+          >
+            Comprar paquete · {formatCurrency(2000)}
+          </button>
+
+          <div className="btn-secondary-row">
             <button
-              className="btn-primary"
-              onClick={() => onBuyPacks(1)}
+              className="btn-secondary"
+              onClick={() => onBuyPacks(10)}
               disabled={isComplete}
             >
-              Comprar paquete · {formatCurrency(2000)}
+              × 10 paquetes
             </button>
-
-            <div className="btn-secondary-row">
-              <button
-                className="btn-secondary"
-                onClick={() => onBuyPacks(10)}
-                disabled={isComplete}
-              >
-                × 10 paquetes
-              </button>
-              <button
-                className="btn-secondary"
-                onClick={() => onBuyPacks(50)}
-                disabled={isComplete}
-              >
-                × 50 paquetes
-              </button>
-            </div>
-
             <button
-              className="btn-autocomplete"
-              onClick={onAutoComplete}
+              className="btn-secondary"
+              onClick={() => onBuyPacks(50)}
               disabled={isComplete}
             >
-              Completar álbum automáticamente
+              × 50 paquetes
             </button>
           </div>
 
-          <LastPack stickers={lastPack} />
+          <button
+            className="btn-autocomplete"
+            onClick={onAutoComplete}
+            disabled={isComplete}
+          >
+            Completar álbum automáticamente
+          </button>
         </div>
+
+        <HistoryChart points={chartPoints} />
+
+        <LastPack stickers={lastPack} />
       </div>
 
       <footer className="dash-footer">
