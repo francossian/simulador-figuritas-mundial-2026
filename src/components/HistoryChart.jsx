@@ -35,7 +35,7 @@ export default function HistoryChart({ points }) {
 
   return (
     <div className="chart-section">
-      <div className="section-title">Figuritas pegadas vs. paquetes comprados</div>
+      <div className="section-title">% de álbum completo por paquete comprado</div>
       <svg
         viewBox={`0 0 ${W} ${H}`}
         style={{ width: '100%', height: 'auto', display: 'block', overflow: 'visible' }}

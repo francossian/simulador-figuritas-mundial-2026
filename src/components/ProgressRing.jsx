@@ -25,8 +25,8 @@ export default function ProgressRing({ percent }) {
         stroke="url(#ringGrad)"
         strokeWidth={STROKE}
         strokeLinecap="round"
-        strokeDasharray={`${filled} ${CIRC}`}
-        strokeDashoffset={CIRC * 0.25}
+        strokeDasharray={`${filled} ${CIRC - filled}`}
+        transform={`rotate(-90, ${SIZE / 2}, ${SIZE / 2})`}
         style={{ transition: 'stroke-dasharray 0.4s ease' }}
       />
       <defs>

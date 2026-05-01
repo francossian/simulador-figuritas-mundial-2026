@@ -105,8 +105,6 @@ export default function Dashboard({
         </div>
 
         <div className="dash-right">
-          <LastPack stickers={lastPack} />
-
           <div className="actions-section">
             <button
               className="btn-primary"
@@ -141,6 +139,8 @@ export default function Dashboard({
               Completar álbum automáticamente
             </button>
           </div>
+
+          <LastPack stickers={lastPack} />
         </div>
       </div>
     </div>

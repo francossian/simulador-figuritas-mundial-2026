@@ -206,7 +206,7 @@ button:disabled {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1rem;
   gap: 1rem;
 }
 
@@ -242,8 +242,8 @@ button:disabled {
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 0.875rem;
-  margin-bottom: 1.75rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .kpi-card {
@@ -292,7 +292,7 @@ button:disabled {
 .dash-main {
   display: grid;
   grid-template-columns: 1fr 340px;
-  gap: 1.25rem;
+  gap: 1rem;
   flex: 1;
 }
 
@@ -307,7 +307,7 @@ button:disabled {
 .dash-left {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 /* ── Progress section ── */
@@ -416,7 +416,7 @@ button:disabled {
 .dash-right {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 /* ── Last pack ── */
@@ -425,15 +425,14 @@ button:disabled {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.5rem;
-  flex: 1;
+  padding: 1.25rem;
 }
 
 .last-pack-empty {
   color: var(--text-dim);
   font-size: 0.85rem;
   text-align: center;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .last-pack-grid {
