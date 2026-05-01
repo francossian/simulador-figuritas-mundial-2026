@@ -143,6 +143,13 @@ export default function Dashboard({
           <LastPack stickers={lastPack} />
         </div>
       </div>
+
+      <footer className="dash-footer">
+        Desarrollado por{' '}
+        <a href="https://www.linkedin.com/in/fguiragossian" target="_blank" rel="noreferrer">
+          Franco Guiragossian
+        </a>
+      </footer>
     </div>
   )
 }
