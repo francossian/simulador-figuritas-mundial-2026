@@ -1,8 +1,8 @@
-import { TOTAL_STICKERS, formatCurrency } from '../constants'
-import KPICard from './KPICard'
-import ProgressRing from './ProgressRing'
-import HistoryChart from './HistoryChart'
-import LastPack from './LastPack'
+import { TOTAL_STICKERS, formatCurrency } from "../constants";
+import KPICard from "./KPICard";
+import ProgressRing from "./ProgressRing";
+import HistoryChart from "./HistoryChart";
+import LastPack from "./LastPack";
 
 export default function Dashboard({
   totalCost,
@@ -18,7 +18,7 @@ export default function Dashboard({
   onAutoComplete,
   onReset,
 }) {
-  const milestones = [25, 50, 75, 100]
+  const milestones = [25, 50, 75, 100];
 
   return (
     <div className="dashboard">
@@ -35,7 +35,7 @@ export default function Dashboard({
         <div className="completed-banner">
           <h2>¡Álbum completado!</h2>
           <p>
-            Compraste {packsOpened.toLocaleString('es-AR')} paquetes y gastaste{' '}
+            Compraste {packsOpened.toLocaleString("es-AR")} paquetes y gastaste{" "}
             {formatCurrency(totalCost)} para terminar el álbum.
           </p>
         </div>
@@ -46,31 +46,29 @@ export default function Dashboard({
           className="kpi-cost"
           label="Gasto total"
           value={formatCurrency(totalCost)}
-          sub={`${packsOpened.toLocaleString('es-AR')} paquete${packsOpened !== 1 ? 's' : ''}`}
+          sub={`${packsOpened.toLocaleString("es-AR")} paquete${packsOpened !== 1 ? "s" : ""}`}
         />
         <KPICard
           className="kpi-owned"
           label="Figuritas pegadas"
-          value={owned.toLocaleString('es-AR')}
+          value={owned.toLocaleString("es-AR")}
           sub={`de ${TOTAL_STICKERS}`}
         />
         <KPICard
           className="kpi-missing"
           label="Figuritas faltantes"
-          value={missing.toLocaleString('es-AR')}
-          sub={missing === 0 ? '¡Álbum completo!' : `faltan ${missing}`}
+          value={missing.toLocaleString("es-AR")}
+          sub={missing === 0 ? "¡Álbum completo!" : `faltan ${missing}`}
         />
         <KPICard
           className="kpi-dupes"
           label="Figuritas repetidas"
-          value={duplicates.toLocaleString('es-AR')}
-          sub={packsOpened > 0 ? `${((duplicates / (packsOpened * 7)) * 100).toFixed(1)}% del total` : '—'}
-        />
-        <KPICard
-          className="kpi-pct"
-          label="% completado"
-          value={`${percentComplete.toFixed(1)}%`}
-          sub={`${owned} / ${TOTAL_STICKERS} figuritas`}
+          value={duplicates.toLocaleString("es-AR")}
+          sub={
+            packsOpened > 0
+              ? `${((duplicates / (packsOpened * 7)) * 100).toFixed(1)}% del total`
+              : "—"
+          }
         />
       </div>
 
@@ -88,10 +86,10 @@ export default function Dashboard({
               />
             </div>
             <div className="progress-milestones">
-              {milestones.map(m => (
+              {milestones.map((m) => (
                 <span
                   key={m}
-                  className={`milestone ${percentComplete >= m ? 'reached' : ''}`}
+                  className={`milestone ${percentComplete >= m ? "reached" : ""}`}
                 >
                   {m}%
                 </span>
@@ -141,11 +139,15 @@ export default function Dashboard({
       </div>
 
       <footer className="dash-footer">
-        Desarrollado por{' '}
-        <a href="https://www.linkedin.com/in/fguiragossian" target="_blank" rel="noreferrer">
+        Desarrollado por{" "}
+        <a
+          href="https://www.linkedin.com/in/fguiragossian"
+          target="_blank"
+          rel="noreferrer"
+        >
           Franco Guiragossian
         </a>
       </footer>
     </div>
-  )
+  );
 }
